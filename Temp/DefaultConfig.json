@@ -1,0 +1,8 @@
+{
+    "charactergroup":{
+        "name":"Group",
+        "skeletongroup":"DeformationSystem",
+        "modelgroup":"Geometry"
+    },
+    "mayapyexe":""
+}

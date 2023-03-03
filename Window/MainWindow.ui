@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>662</width>
+    <height>584</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="BatchProcessing">
+       <attribute name="title">
+        <string>批处理</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="MyWidget" name="MyWidget" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLineEdit" name="LET_DirPath"/>
+             </item>
+             <item>
+              <widget class="QToolButton" name="TBT_SelectDir">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="Files_Table" name="Files_Table">
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderVisible">
+              <bool>false</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>Files_Name</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="PBT_Start">
+             <property name="text">
+              <string>开始处理</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="ConfigSettingTab">
+       <attribute name="title">
+        <string>配置信息</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="ConfigWidget" name="ConfigWidget" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <layout class="QHBoxLayout" name="HL_Config_0">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>MayaPyLocation</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="LET_DirMayaPy">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="TBP_SelectMayaPyPath">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="HL_Config_1">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>角色组名</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="LE_CharacterName"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="HL_Config_2">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>模型组名</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="LE_ModelName"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="HL_Config_3">
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>骨骼组名</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="LE_SkeletalName"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="PB_Config_Save">
+          <property name="text">
+           <string>保存</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>662</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyWidget</class>
+   <extends>QWidget</extends>
+   <header>Blocks.MyWidget</header>
+   <container>1</container>
+   <slots>
+    <slot>PBT_StartClicked()</slot>
+    <slot>TBT_SelectDirClicked()</slot>
+    <slot>LET_DirPathTextChenge(QString)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>Files_Table</class>
+   <extends>QTableWidget</extends>
+   <header>WidgetComponents.Files_Table</header>
+  </customwidget>
+  <customwidget>
+   <class>ConfigWidget</class>
+   <extends>QWidget</extends>
+   <header>Blocks.ConfigWidget</header>
+   <container>1</container>
+   <slots>
+    <slot>TBP_SelectMayaPyPathClicked()</slot>
+    <slot>ConfigChange(QString)</slot>
+    <slot>SaveConfigEvent()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>PBT_Start</sender>
+   <signal>clicked()</signal>
+   <receiver>MyWidget</receiver>
+   <slot>PBT_StartClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>379</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TBT_SelectDir</sender>
+   <signal>clicked()</signal>
+   <receiver>MyWidget</receiver>
+   <slot>TBT_SelectDirClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>728</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LET_DirPath</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>MyWidget</receiver>
+   <slot>LET_DirPathTextChenge(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>364</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LE_CharacterName</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ConfigWidget</receiver>
+   <slot>ConfigChange(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>356</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LE_ModelName</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ConfigWidget</receiver>
+   <slot>ConfigChange(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>356</x>
+     <y>344</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>LE_SkeletalName</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>ConfigWidget</receiver>
+   <slot>ConfigChange(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>356</x>
+     <y>458</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PB_Config_Save</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigWidget</receiver>
+   <slot>SaveConfigEvent()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>329</x>
+     <y>529</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TBP_SelectMayaPyPath</sender>
+   <signal>clicked()</signal>
+   <receiver>ConfigWidget</receiver>
+   <slot>TBP_SelectMayaPyPathClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>617</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

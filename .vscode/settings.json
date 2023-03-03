@@ -1,0 +1,5 @@
+{
+    "python.pythonPath":"python",
+    "python.autoComplete.extraPaths": ["D:/Maya2019/devkit/other/pymel/extras/completion/py"],
+    "python.analysis.extraPaths": ["D:/Maya2019/devkit/other/pymel/extras/completion/py"],
+}
